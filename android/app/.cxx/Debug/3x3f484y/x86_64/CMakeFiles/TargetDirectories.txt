@@ -1,0 +1,2 @@
+D:/DATA UUM/Project/learning_flutter/kominfo_mobile_1/android/app/.cxx/Debug/3x3f484y/x86_64/CMakeFiles/edit_cache.dir
+D:/DATA UUM/Project/learning_flutter/kominfo_mobile_1/android/app/.cxx/Debug/3x3f484y/x86_64/CMakeFiles/rebuild_cache.dir
