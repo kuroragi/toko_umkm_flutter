@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'widgets/MenuCategoryCard.dart';
+import 'widgets/UmkmPopularCard.dart';
 
 void main() => runApp(const MyApp());
 
@@ -117,160 +119,12 @@ class MyApp extends StatelessWidget {
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  elevation: 4,
-                                  child: Column(
-                                    children: [
-                                      // Gambar Produk
-                                      ClipRRect(
-                                        borderRadius:
-                                            const BorderRadius.vertical(
-                                                top: Radius.circular(12)),
-                                        child: Image.asset(
-                                          'assets/appBarPattern.png',
-                                          width: 250,
-                                          height: 250,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.all(12),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            // Nama Produk
-                                            Text(
-                                              'JUALAN DHANA CIRENG ISI',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16),
-                                            ),
-                                            SizedBox(height: 8),
-
-                                            // Info Produk
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                    Icons.shopping_bag_outlined,
-                                                    size: 18),
-                                                SizedBox(width: 6),
-                                                Text('1 Produk'),
-                                              ],
-                                            ),
-                                            SizedBox(height: 4),
-                                            Row(
-                                              children: [
-                                                Icon(Icons.link, size: 18),
-                                                SizedBox(width: 6),
-                                                Text('Lihat Instagram'),
-                                              ],
-                                            ),
-                                            SizedBox(height: 12),
-
-                                            // Nama Pemilik
-                                            Row(
-                                              children: [
-                                                Icon(Icons.account_circle,
-                                                    color: Colors.green),
-                                                SizedBox(width: 6),
-                                                Text(
-                                                  'DHANA HERAWATY',
-                                                  style: TextStyle(
-                                                    color: Colors.blue,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(12),
-                                  ),
-                                  elevation: 4,
-                                  child: Column(
-                                    children: [
-                                      // Gambar Produk
-                                      ClipRRect(
-                                        borderRadius:
-                                            const BorderRadius.vertical(
-                                                top: Radius.circular(12)),
-                                        child: Image.asset(
-                                          'assets/appBarPattern.png',
-                                          width: 250,
-                                          height: 250,
-                                          fit: BoxFit.fill,
-                                        ),
-                                      ),
-                                      const Padding(
-                                        padding: EdgeInsets.all(12),
-                                        child: Column(
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
-                                          children: [
-                                            // Nama Produk
-                                            Text(
-                                              'JUALAN DHANA CIRENG ISI',
-                                              style: TextStyle(
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16),
-                                            ),
-                                            SizedBox(height: 8),
-
-                                            // Info Produk
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                    Icons.shopping_bag_outlined,
-                                                    size: 18),
-                                                SizedBox(width: 6),
-                                                Text('1 Produk'),
-                                              ],
-                                            ),
-                                            SizedBox(height: 4),
-                                            Row(
-                                              children: [
-                                                Icon(Icons.link, size: 18),
-                                                SizedBox(width: 6),
-                                                Text('Lihat Instagram'),
-                                              ],
-                                            ),
-                                            SizedBox(height: 12),
-
-                                            // Nama Pemilik
-                                            Row(
-                                              children: [
-                                                Icon(Icons.account_circle,
-                                                    color: Colors.green),
-                                                SizedBox(width: 6),
-                                                Text(
-                                                  'DHANA HERAWATY',
-                                                  style: TextStyle(
-                                                    color: Colors.blue,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                    fontWeight: FontWeight.w500,
-                                                  ),
-                                                ),
-                                              ],
-                                            )
-                                          ],
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
+                                UmkmPopularCard(
+                                    imageAsset: 'assets/appBarPattern.png',
+                                    title: 'Jualan Dhana Cireng Isi',
+                                    produk: 1,
+                                    pemilik: 'DHANA HERAWATI',
+                                    idUmkm: 1.toString()),
                               ],
                             ),
                           ),
@@ -506,83 +360,4 @@ Widget menu() {
       ],
     ),
   );
-}
-
-class MenuCategoryCard extends StatelessWidget {
-  final IconData icon;
-  final String title;
-  final String subtitle;
-  final String? badgeText;
-
-  const MenuCategoryCard(
-      {super.key,
-      required this.icon,
-      required this.title,
-      required this.subtitle,
-      this.badgeText});
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          width: 100,
-          margin: const EdgeInsets.only(right: 12),
-          padding: const EdgeInsets.all(10),
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(16),
-              boxShadow: const [
-                BoxShadow(
-                  color: Colors.black12,
-                  blurRadius: 5,
-                  offset: Offset(0, 2),
-                )
-              ]),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                icon,
-                size: 36,
-                color: Colors.red,
-              ),
-              const SizedBox(
-                height: 6,
-              ),
-              Text(
-                title,
-                style: TextStyle(fontSize: 12),
-              ),
-              Text(
-                subtitle,
-                style:
-                    const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-              )
-            ],
-          ),
-        ),
-        if (badgeText != null)
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
-              decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(
-                badgeText!,
-                style: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 10,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          )
-      ],
-    );
-  }
 }
