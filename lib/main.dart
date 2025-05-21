@@ -125,6 +125,12 @@ class MyApp extends StatelessWidget {
                                     produk: 1,
                                     pemilik: 'DHANA HERAWATI',
                                     idUmkm: 1.toString()),
+                                UmkmPopularCard(
+                                    imageAsset: 'assets/appBarPattern.png',
+                                    title: 'Kedai Kpoi Asik',
+                                    produk: 4,
+                                    pemilik: 'ANINDITHYA',
+                                    idUmkm: 2.toString())
                               ],
                             ),
                           ),
